@@ -35,6 +35,10 @@ insert into products
 ('Product_28', 80,1),('Product_29', 25,1),('Product_30', 300,2)
 ;
 
+--insert into products
+--(title, price) values
+--('TEST', 999999)
+--;
 
 create table orders
 (

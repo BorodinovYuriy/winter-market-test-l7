@@ -9,6 +9,7 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
+import java.util.Optional;
 
 @Entity
 @Data
@@ -17,13 +18,17 @@ import java.time.LocalDateTime;
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     @Column(name = "id")
     private Long id;
+
     @Column(name = "title")
     private String title;
 
     @Column(name = "price")
     private int price;
+
+
     @ManyToOne
     @JoinColumn(name = "category_id")
     private Category category;
@@ -31,6 +36,7 @@ public class Product {
     @CreationTimestamp//hibernate
     @Column(name = "created_at")
     private LocalDateTime createdAt;
+
     @UpdateTimestamp//hibernate
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
@@ -41,4 +47,5 @@ public class Product {
         this.title = title;
         this.price = price;
     }
+
 }
