@@ -55,5 +55,8 @@ public class ProductService {
         productRepository.save(product);
     }
 
+    public Product findByTitle(String title) {
+        return  productRepository.findByTitle(title);
+    }
 }
 

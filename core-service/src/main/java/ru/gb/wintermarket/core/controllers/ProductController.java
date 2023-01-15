@@ -63,6 +63,13 @@ public class ProductController {
         return getAllProducts(1, null,null, null);
     }
 
+    @PostMapping("/test")
+    public Product saveTest (@RequestBody Product product){
+        productService.saveProduct(product);
+        return productService.findByTitle(product.getTitle());
+    }
+
+
 
 
 

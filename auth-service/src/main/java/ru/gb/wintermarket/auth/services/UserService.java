@@ -44,4 +44,35 @@ public class UserService implements UserDetailsService {
     public List<User> findAll() {
         return userRepository.findAll();
     }
+    @Transactional
+    public User saveAndReturnNewUser(User user) {
+        if(userRepository.findByUsername(user.getUsername()).isEmpty()){
+            userRepository.save(user);
+            return userRepository.findByUsername(user.getUsername()).orElse(null);
+        }
+        return null;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
